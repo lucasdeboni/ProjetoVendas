@@ -14,15 +14,28 @@ namespace ProjetoVenda
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            Application.Run(new frmCadastroProduto());
+            //Application.Run(new frmCadastroProduto());
 
-            //using (frmLogin login = new frmLogin())
-            //{
-            //    if (login.ShowDialog() == DialogResult.OK)
-            //    {
-            //        Application.Run(new frmPrincipal());
-            //    }
-            //}
+            while (true)
+            {
+                using (frmLogin login = new frmLogin())
+                {
+                    if (login.ShowDialog() != DialogResult.OK)
+                    {
+                        break;
+                    }
+                }
+                using (frmPrincipal principal = new frmPrincipal())
+                {
+                    Application.Run(principal);
+                    if (principal.DialogResult != DialogResult.Retry)
+                    {
+                        break;
+                    }
+                }
+
+            }
+
 
         }
     }

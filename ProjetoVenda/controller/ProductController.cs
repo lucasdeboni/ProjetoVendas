@@ -18,9 +18,9 @@ namespace ProjetoVenda.controller
         public bool createProduct(Product product)
         {
             int cod_funcionario = Session.userAuth.cod_funcionario;
-            
             product.cod_funcionario = cod_funcionario;
-            // chamar a repository
+            product.validar();
+            // fazer o cadastro
             repository.createProduct(product);
 
             return true;
@@ -39,7 +39,7 @@ namespace ProjetoVenda.controller
         public int quantidadePaginas(int quantidadeItensPorPagina)
         {
             int totalProdutos = repository.quantidadeProdutos();
-            return (int) Math.Ceiling((decimal)(totalProdutos / quantidadeItensPorPagina));
+            return (int) Math.Ceiling((decimal)totalProdutos / quantidadeItensPorPagina);
         }
 
         public bool atualizar(Product product)
