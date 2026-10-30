@@ -1,4 +1,5 @@
 ﻿using ProjetoVenda.controller;
+using ProjetoVenda.model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,9 +12,12 @@ namespace ProjetoVenda.view
 {
     public partial class frmCadastroFuncionario : Form
     {
+        private EmployeeController controller;
+
         public frmCadastroFuncionario()
         {
             InitializeComponent();
+            controller = new EmployeeController();
         }
 
         private void limparCampos()
@@ -38,7 +42,7 @@ namespace ProjetoVenda.view
             string numero = this.txtNumero.Text;
             string cep = this.txtCep.Text;
             string complemento = this.txtComplemento.Text;
-            
+
             string usuario = this.txtUsuario.Text;
             string senha = this.txtSenha.Text;
             string confirmacaoSenha = this.txtConfirmacaoSenha.Text;
@@ -62,12 +66,13 @@ namespace ProjetoVenda.view
             {
                 MessageBox.Show(
                     "Funcionário Cadastrado Com Sucesso"
-                    ,"Cadastro Funcionário"
-                    ,MessageBoxButtons.OK
-                    ,MessageBoxIcon.Information
+                    , "Cadastro Funcionário"
+                    , MessageBoxButtons.OK
+                    , MessageBoxIcon.Information
                     );
                 limparCampos();
-            } else
+            }
+            else
             {
                 MessageBox.Show(
                     "Erro ao Cadastrar Funcionário"
@@ -76,6 +81,25 @@ namespace ProjetoVenda.view
                     , MessageBoxIcon.Error
                     );
             }
+        }
+
+        private void frmCadastroFuncionario_Load(object sender, EventArgs e)
+        {
+            carregarFuncionarios();
+        }
+
+        private void carregarFuncionarios()
+        {
+            //totalDePaginas = controller.quantidadePaginas(totalPorPagina);
+            //if (paginaAtual > totalDePaginas)
+            //{
+            //    paginaAtual = totalDePaginas;
+            //}
+            //atualizarLblPagina();
+
+            List<Employee> list = controller.getAll();
+            this.dgvFuncionarios.DataSource = list;
+            this.dgvFuncionarios.Columns["senha"].Visible = false;
         }
     }
 }

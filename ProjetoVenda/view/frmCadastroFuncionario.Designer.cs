@@ -42,11 +42,13 @@
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
+            dgvFuncionarios = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgvFuncionarios).BeginInit();
             SuspendLayout();
             // 
             // txtNome
             // 
-            txtNome.Location = new Point(35, 44);
+            txtNome.Location = new Point(12, 29);
             txtNome.Name = "txtNome";
             txtNome.PlaceholderText = "Nome";
             txtNome.Size = new Size(304, 23);
@@ -54,7 +56,7 @@
             // 
             // txtUsuario
             // 
-            txtUsuario.Location = new Point(35, 287);
+            txtUsuario.Location = new Point(358, 89);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.PlaceholderText = "Usuário";
             txtUsuario.Size = new Size(138, 23);
@@ -62,7 +64,7 @@
             // 
             // txtSenha
             // 
-            txtSenha.Location = new Point(35, 316);
+            txtSenha.Location = new Point(358, 118);
             txtSenha.Name = "txtSenha";
             txtSenha.PasswordChar = '*';
             txtSenha.PlaceholderText = "Senha";
@@ -71,15 +73,15 @@
             // 
             // txtNumero
             // 
-            txtNumero.Location = new Point(266, 201);
+            txtNumero.Location = new Point(12, 118);
             txtNumero.Name = "txtNumero";
             txtNumero.PlaceholderText = "Numero";
-            txtNumero.Size = new Size(73, 23);
+            txtNumero.Size = new Size(100, 23);
             txtNumero.TabIndex = 4;
             // 
             // txtRua
             // 
-            txtRua.Location = new Point(35, 201);
+            txtRua.Location = new Point(118, 89);
             txtRua.Name = "txtRua";
             txtRua.PlaceholderText = "Rua";
             txtRua.Size = new Size(225, 23);
@@ -87,7 +89,7 @@
             // 
             // txtTelefone
             // 
-            txtTelefone.Location = new Point(35, 105);
+            txtTelefone.Location = new Point(355, 29);
             txtTelefone.Name = "txtTelefone";
             txtTelefone.PlaceholderText = "Telefone";
             txtTelefone.Size = new Size(120, 23);
@@ -95,7 +97,7 @@
             // 
             // txtComplemento
             // 
-            txtComplemento.Location = new Point(35, 230);
+            txtComplemento.Location = new Point(118, 118);
             txtComplemento.Name = "txtComplemento";
             txtComplemento.PlaceholderText = "Complemento";
             txtComplemento.Size = new Size(225, 23);
@@ -103,7 +105,7 @@
             // 
             // txtCep
             // 
-            txtCep.Location = new Point(35, 172);
+            txtCep.Location = new Point(12, 89);
             txtCep.Name = "txtCep";
             txtCep.PlaceholderText = "CEP";
             txtCep.Size = new Size(100, 23);
@@ -111,7 +113,7 @@
             // 
             // btnCadastrar
             // 
-            btnCadastrar.Location = new Point(35, 360);
+            btnCadastrar.Location = new Point(12, 147);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.Size = new Size(75, 36);
             btnCadastrar.TabIndex = 9;
@@ -121,7 +123,7 @@
             // 
             // txtConfirmacaoSenha
             // 
-            txtConfirmacaoSenha.Location = new Point(179, 316);
+            txtConfirmacaoSenha.Location = new Point(502, 118);
             txtConfirmacaoSenha.Name = "txtConfirmacaoSenha";
             txtConfirmacaoSenha.PasswordChar = '*';
             txtConfirmacaoSenha.PlaceholderText = "Confirmação Senha";
@@ -131,7 +133,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(35, 150);
+            label1.Location = new Point(12, 67);
             label1.Name = "label1";
             label1.Size = new Size(56, 15);
             label1.TabIndex = 10;
@@ -140,7 +142,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(35, 87);
+            label2.Location = new Point(355, 11);
             label2.Name = "label2";
             label2.Size = new Size(50, 15);
             label2.TabIndex = 11;
@@ -149,7 +151,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(35, 269);
+            label3.Location = new Point(358, 71);
             label3.Name = "label3";
             label3.Size = new Size(37, 15);
             label3.TabIndex = 12;
@@ -158,17 +160,27 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(35, 26);
+            label4.Location = new Point(12, 11);
             label4.Name = "label4";
             label4.Size = new Size(96, 15);
             label4.TabIndex = 13;
             label4.Text = "Nome Completo";
             // 
+            // dgvFuncionarios
+            // 
+            dgvFuncionarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvFuncionarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvFuncionarios.Location = new Point(12, 202);
+            dgvFuncionarios.Name = "dgvFuncionarios";
+            dgvFuncionarios.Size = new Size(628, 310);
+            dgvFuncionarios.TabIndex = 14;
+            // 
             // frmCadastroFuncionario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(405, 450);
+            ClientSize = new Size(954, 524);
+            Controls.Add(dgvFuncionarios);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -186,6 +198,8 @@
             Name = "frmCadastroFuncionario";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro Funcionario";
+            Load += frmCadastroFuncionario_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvFuncionarios).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -206,5 +220,6 @@
         private Label label2;
         private Label label3;
         private Label label4;
+        private DataGridView dgvFuncionarios;
     }
 }

@@ -207,7 +207,7 @@ namespace ProjetoVenda.view
 
         private void atualizarLblPagina()
         {
-            this.lblPaginas.Text = $"< Pagina {paginaAtual} de {totalDePaginas} >";
+            this.lblPaginas.Text = $"Pagina {paginaAtual} de {totalDePaginas}";
         }
 
         private void cbxQuantidadeItens_SelectedIndexChanged(object sender, EventArgs e)

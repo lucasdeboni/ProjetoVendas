@@ -8,6 +8,13 @@ namespace ProjetoVenda.controller
 {
     internal class EmployeeController
     {
+        public EmployeeRepository repository;
+
+        public EmployeeController()
+        {
+            repository = new EmployeeRepository();
+        }
+
         public bool login(string username, string password)
         {
             EmployeeRepository repository = new EmployeeRepository();
@@ -72,6 +79,20 @@ namespace ProjetoVenda.controller
             return true;
         }
 
-    
+        public void deslogar()
+        {
+            Session.userAuth = null;
+        }
+
+        public Employee? usuarioAutenticado()
+        {
+            return Session.userAuth;
+        }
+
+        public List<Employee> getAll()
+        {
+            return repository.getAll();
+        }
+
     }
 }

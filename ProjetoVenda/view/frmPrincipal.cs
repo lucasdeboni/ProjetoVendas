@@ -1,4 +1,5 @@
 ﻿using ProjetoVenda.controller;
+using ProjetoVenda.model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,9 +12,15 @@ namespace ProjetoVenda.view
 {
     public partial class frmPrincipal : Form
     {
+        private EmployeeController controller;
+
         public frmPrincipal()
         {
             InitializeComponent();
+            controller = new EmployeeController();
+            Employee? funcionario = controller.usuarioAutenticado();
+            string nome = (funcionario != null) ? funcionario.nome : "";
+            this.Text += $" - {nome}";
         }
 
         private void frmPrincipal_Load(object sender, EventArgs e)
@@ -38,8 +45,6 @@ namespace ProjetoVenda.view
             formulario.Show();
         }
 
-
-
         private void btnCadFuncionario_Click(object sender, EventArgs e)
         {
             frmCadastroFuncionario frm = new frmCadastroFuncionario();
@@ -57,8 +62,15 @@ namespace ProjetoVenda.view
         private void btnSair_Click(object sender, EventArgs e)
         {
             // evento para sair
+            controller.deslogar();
             this.DialogResult = DialogResult.Retry;
             this.Dispose();
+        }
+
+        private void btnPerfil_Click(object sender, EventArgs e)
+        {
+            frmPerfilUsuario frm = new frmPerfilUsuario();
+            exibirFormulario(frm);
         }
     }
 }

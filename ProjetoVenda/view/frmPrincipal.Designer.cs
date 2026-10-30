@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             lblUsername = new Label();
             btnCadFuncionario = new Button();
             btnCadProduto = new Button();
             panel2 = new Panel();
+            btnPerfil = new Button();
             btnSair = new Button();
             panel1 = new Panel();
             painelPrincipal = new Panel();
@@ -69,6 +71,7 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(btnPerfil);
             panel2.Controls.Add(btnSair);
             panel2.Controls.Add(btnCadProduto);
             panel2.Controls.Add(btnCadFuncionario);
@@ -76,14 +79,24 @@
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(131, 727);
+            panel2.Size = new Size(131, 694);
             panel2.TabIndex = 4;
+            // 
+            // btnPerfil
+            // 
+            btnPerfil.Location = new Point(12, 601);
+            btnPerfil.Name = "btnPerfil";
+            btnPerfil.Size = new Size(92, 40);
+            btnPerfil.TabIndex = 4;
+            btnPerfil.Text = "Perfil";
+            btnPerfil.UseVisualStyleBackColor = true;
+            btnPerfil.Click += btnPerfil_Click;
             // 
             // btnSair
             // 
-            btnSair.Location = new Point(12, 692);
+            btnSair.Location = new Point(12, 647);
             btnSair.Name = "btnSair";
-            btnSair.Size = new Size(97, 23);
+            btnSair.Size = new Size(92, 37);
             btnSair.TabIndex = 3;
             btnSair.Text = "Sair";
             btnSair.UseVisualStyleBackColor = true;
@@ -102,17 +115,18 @@
             painelPrincipal.Dock = DockStyle.Fill;
             painelPrincipal.Location = new Point(131, 60);
             painelPrincipal.Name = "painelPrincipal";
-            painelPrincipal.Size = new Size(783, 667);
+            painelPrincipal.Size = new Size(783, 634);
             painelPrincipal.TabIndex = 6;
             // 
             // frmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 727);
+            ClientSize = new Size(914, 694);
             Controls.Add(painelPrincipal);
             Controls.Add(panel1);
             Controls.Add(panel2);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Tela Inicial";
@@ -131,5 +145,6 @@
         private Panel panel1;
         private Panel painelPrincipal;
         private Button btnSair;
+        private Button btnPerfil;
     }
 }

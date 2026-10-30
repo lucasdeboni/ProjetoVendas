@@ -10,6 +10,9 @@
     <Compile Update="view\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="view\frmPerfilUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="view\frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>

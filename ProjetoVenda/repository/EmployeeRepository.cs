@@ -60,5 +60,20 @@ namespace ProjetoVenda.repository
 
             return (int) cmd.LastInsertedId;
         }
+
+        public List<Employee> getAll()
+        {
+            using MySqlConnection connector = Database.GetConnection();
+            string sql = "SELECT * FROM funcionario";
+            using MySqlCommand cmd = new MySqlCommand(sql, connector);
+            using var reader = cmd.ExecuteReader();
+
+            List<Employee> list = new List<Employee>();
+            while (reader.Read())
+            {
+                list.Add(map(reader));
+            }
+            return list;
+        }
     }
 }
