@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using ProjetoVenda.model;
 using ProjetoVenda.repository;
+using ProjetoVenda.view;
 
 namespace ProjetoVenda.controller
 {
@@ -44,37 +45,21 @@ namespace ProjetoVenda.controller
             return true;
         }
 
-        public bool createEmployee(
-             string nome
-            ,string telefone
-            ,string rua
-            ,string numero
-            ,string cep
-            ,string complemento
-            ,string usuario
-            ,string senha)
+        public bool createEmployee(Employee funcionario)
         {
             // fazer verificação se o usuário não existe
             //solicitar ao repository se o usuário existe
             EmployeeRepository repository = new EmployeeRepository();
-            Employee? resp = repository.getByUsername(usuario);
+            Employee? resp = repository.getByUsername(funcionario.usuario);
 
             if(resp != null)
             {
                 return false;
             }
 
-            string hash = BCrypt.Net.BCrypt.HashPassword(senha);
-            Employee funcionario = new Employee {
-                nome = nome,
-                telefone = telefone,
-                rua = rua,
-                numero = numero,
-                cep = cep,
-                complemento = complemento,
-                usuario = usuario,
-                senha = hash
-            };
+            string hash = BCrypt.Net.BCrypt.HashPassword(funcionario.senha);
+            funcionario.senha = hash;
+
             repository.createEmployee(funcionario);
             return true;
         }
@@ -94,5 +79,28 @@ namespace ProjetoVenda.controller
             return repository.getAll();
         }
 
+        public List<Employee> listarPorPagina(int qtd, int pagina)
+        {
+            return repository.listarPorPagina(qtd, pagina);
+        }
+
+        public int quantidadePaginas(int quantidadeItensPorPagina)
+        {
+            int totalFuncionarios = repository.quantidadeFuncionarios();
+            return (int)Math.Ceiling((decimal)totalFuncionarios / quantidadeItensPorPagina);
+        }
+
+        public bool atualizar(Employee employee)
+        {
+            return repository.atualizar(employee);
+        }
+
+        public bool usuarioAdministrador()
+        {
+            if (Session.userAuth == null)
+                return false;
+
+            return Session.userAuth.adm;
+        }
     }
 }

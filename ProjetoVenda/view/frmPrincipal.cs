@@ -26,9 +26,13 @@ namespace ProjetoVenda.view
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
             string username = Session.userAuth.nome;
-            bool isAdmin = Session.isAdmin;
-
             this.lblUsername.Text = username;
+
+            bool adm = controller.usuarioAdministrador();
+            if (!adm)
+            {
+                this.btnCadFuncionario.Visible = false;
+            }
         }
 
         private void exibirFormulario(Form formulario)
