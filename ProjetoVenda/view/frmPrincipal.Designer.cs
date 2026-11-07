@@ -33,11 +33,14 @@
             btnCadFuncionario = new Button();
             btnCadProduto = new Button();
             panel2 = new Panel();
+            btnCadVenda = new Button();
             btnPerfil = new Button();
             btnSair = new Button();
             panel1 = new Panel();
             painelPrincipal = new Panel();
+            lblTitulo = new Label();
             panel2.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // lblUsername
@@ -51,7 +54,7 @@
             // 
             // btnCadFuncionario
             // 
-            btnCadFuncionario.Location = new Point(12, 53);
+            btnCadFuncionario.Location = new Point(12, 555);
             btnCadFuncionario.Name = "btnCadFuncionario";
             btnCadFuncionario.Size = new Size(92, 40);
             btnCadFuncionario.TabIndex = 1;
@@ -61,7 +64,7 @@
             // 
             // btnCadProduto
             // 
-            btnCadProduto.Location = new Point(12, 99);
+            btnCadProduto.Location = new Point(12, 60);
             btnCadProduto.Name = "btnCadProduto";
             btnCadProduto.Size = new Size(92, 40);
             btnCadProduto.TabIndex = 2;
@@ -71,6 +74,7 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(btnCadVenda);
             panel2.Controls.Add(btnPerfil);
             panel2.Controls.Add(btnSair);
             panel2.Controls.Add(btnCadProduto);
@@ -81,6 +85,16 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(131, 694);
             panel2.TabIndex = 4;
+            // 
+            // btnCadVenda
+            // 
+            btnCadVenda.Location = new Point(12, 106);
+            btnCadVenda.Name = "btnCadVenda";
+            btnCadVenda.Size = new Size(92, 40);
+            btnCadVenda.TabIndex = 5;
+            btnCadVenda.Text = "Cadastrar Venda";
+            btnCadVenda.UseVisualStyleBackColor = true;
+            btnCadVenda.Click += btnCadVenda_Click;
             // 
             // btnPerfil
             // 
@@ -104,6 +118,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(lblTitulo);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(131, 0);
             panel1.Name = "panel1";
@@ -117,6 +132,17 @@
             painelPrincipal.Name = "painelPrincipal";
             painelPrincipal.Size = new Size(783, 634);
             painelPrincipal.TabIndex = 6;
+            // 
+            // lblTitulo
+            // 
+            lblTitulo.Dock = DockStyle.Fill;
+            lblTitulo.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitulo.Location = new Point(0, 0);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(783, 60);
+            lblTitulo.TabIndex = 0;
+            lblTitulo.Text = "Título da Tela";
+            lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // frmPrincipal
             // 
@@ -133,6 +159,7 @@
             Load += frmPrincipal_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -146,5 +173,7 @@
         private Panel painelPrincipal;
         private Button btnSair;
         private Button btnPerfil;
+        private Button btnCadVenda;
+        private Label lblTitulo;
     }
 }

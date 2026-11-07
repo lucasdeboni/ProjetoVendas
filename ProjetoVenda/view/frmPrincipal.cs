@@ -45,6 +45,9 @@ namespace ProjetoVenda.view
             formulario.TopLevel = false;
             formulario.FormBorderStyle = FormBorderStyle.None;
             formulario.Dock = DockStyle.Fill;
+
+            this.lblTitulo.Text = formulario.Text;
+
             painelPrincipal.Controls.Add(formulario);
             formulario.Show();
         }
@@ -74,6 +77,12 @@ namespace ProjetoVenda.view
         private void btnPerfil_Click(object sender, EventArgs e)
         {
             frmPerfilUsuario frm = new frmPerfilUsuario();
+            exibirFormulario(frm);
+        }
+
+        private void btnCadVenda_Click(object sender, EventArgs e)
+        {
+            frmCadastroVenda frm = new frmCadastroVenda();
             exibirFormulario(frm);
         }
     }
