@@ -32,8 +32,10 @@
             lblPreco = new Label();
             lblQuantidade = new Label();
             numQuantidade = new NumericUpDown();
-            btnCadastrar = new Button();
+            btnAdicionar = new Button();
             dgvCarrinho = new DataGridView();
+            btnCadastrar = new Button();
+            lblPrecoTotal = new Label();
             ((System.ComponentModel.ISupportInitialize)numQuantidade).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvCarrinho).BeginInit();
             SuspendLayout();
@@ -73,14 +75,15 @@
             numQuantidade.Size = new Size(120, 23);
             numQuantidade.TabIndex = 3;
             // 
-            // btnCadastrar
+            // btnAdicionar
             // 
-            btnCadastrar.Location = new Point(537, 117);
-            btnCadastrar.Name = "btnCadastrar";
-            btnCadastrar.Size = new Size(75, 23);
-            btnCadastrar.TabIndex = 4;
-            btnCadastrar.Text = "Cadastrar";
-            btnCadastrar.UseVisualStyleBackColor = true;
+            btnAdicionar.Location = new Point(537, 117);
+            btnAdicionar.Name = "btnAdicionar";
+            btnAdicionar.Size = new Size(75, 23);
+            btnAdicionar.TabIndex = 4;
+            btnAdicionar.Text = "Adicionar";
+            btnAdicionar.UseVisualStyleBackColor = true;
+            btnAdicionar.Click += btnAdicionar_Click;
             // 
             // dgvCarrinho
             // 
@@ -88,21 +91,43 @@
             dgvCarrinho.AllowUserToDeleteRows = false;
             dgvCarrinho.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvCarrinho.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCarrinho.Location = new Point(35, 178);
+            dgvCarrinho.Location = new Point(24, 178);
             dgvCarrinho.MultiSelect = false;
             dgvCarrinho.Name = "dgvCarrinho";
             dgvCarrinho.ReadOnly = true;
             dgvCarrinho.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvCarrinho.Size = new Size(577, 272);
+            dgvCarrinho.Size = new Size(588, 342);
             dgvCarrinho.TabIndex = 5;
+            // 
+            // btnCadastrar
+            // 
+            btnCadastrar.Location = new Point(277, 577);
+            btnCadastrar.Name = "btnCadastrar";
+            btnCadastrar.Size = new Size(105, 45);
+            btnCadastrar.TabIndex = 6;
+            btnCadastrar.Text = "Cadastrar";
+            btnCadastrar.UseVisualStyleBackColor = true;
+            btnCadastrar.Click += btnCadastrar_Click;
+            // 
+            // lblPrecoTotal
+            // 
+            lblPrecoTotal.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblPrecoTotal.Location = new Point(35, 523);
+            lblPrecoTotal.Name = "lblPrecoTotal";
+            lblPrecoTotal.Size = new Size(566, 39);
+            lblPrecoTotal.TabIndex = 7;
+            lblPrecoTotal.Text = "Total da venda: R$ XX.XX";
+            lblPrecoTotal.TextAlign = ContentAlignment.TopRight;
             // 
             // frmCadastroVenda
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(636, 502);
-            Controls.Add(dgvCarrinho);
+            ClientSize = new Size(659, 644);
+            Controls.Add(lblPrecoTotal);
             Controls.Add(btnCadastrar);
+            Controls.Add(dgvCarrinho);
+            Controls.Add(btnAdicionar);
             Controls.Add(numQuantidade);
             Controls.Add(lblQuantidade);
             Controls.Add(lblPreco);
@@ -122,7 +147,9 @@
         private Label lblPreco;
         private Label lblQuantidade;
         private NumericUpDown numQuantidade;
-        private Button btnCadastrar;
+        private Button btnAdicionar;
         private DataGridView dgvCarrinho;
+        private Button btnCadastrar;
+        private Label lblPrecoTotal;
     }
 }

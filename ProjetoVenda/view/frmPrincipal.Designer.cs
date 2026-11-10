@@ -37,8 +37,8 @@
             btnPerfil = new Button();
             btnSair = new Button();
             panel1 = new Panel();
-            painelPrincipal = new Panel();
             lblTitulo = new Label();
+            painelPrincipal = new Panel();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -74,6 +74,8 @@
             // 
             // panel2
             // 
+            panel2.BackColor = SystemColors.MenuHighlight;
+            panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(btnCadVenda);
             panel2.Controls.Add(btnPerfil);
             panel2.Controls.Add(btnSair);
@@ -125,14 +127,6 @@
             panel1.Size = new Size(783, 60);
             panel1.TabIndex = 5;
             // 
-            // painelPrincipal
-            // 
-            painelPrincipal.Dock = DockStyle.Fill;
-            painelPrincipal.Location = new Point(131, 60);
-            painelPrincipal.Name = "painelPrincipal";
-            painelPrincipal.Size = new Size(783, 634);
-            painelPrincipal.TabIndex = 6;
-            // 
             // lblTitulo
             // 
             lblTitulo.Dock = DockStyle.Fill;
@@ -143,6 +137,14 @@
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "Título da Tela";
             lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // painelPrincipal
+            // 
+            painelPrincipal.Dock = DockStyle.Fill;
+            painelPrincipal.Location = new Point(131, 60);
+            painelPrincipal.Name = "painelPrincipal";
+            painelPrincipal.Size = new Size(783, 634);
+            painelPrincipal.TabIndex = 6;
             // 
             // frmPrincipal
             // 

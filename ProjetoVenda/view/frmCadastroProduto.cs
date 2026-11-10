@@ -97,6 +97,7 @@ namespace ProjetoVenda.view
             List<Product> list = controller.listarPorPagina(totalPorPagina, paginaAtual);
             this.dgvProdutos.DataSource = list;
             this.dgvProdutos.Columns["cod_funcionario"].Visible = false;
+            this.dgvProdutos.Columns["precoReal"].Visible = false;
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)
