@@ -14,7 +14,7 @@ namespace ProjetoVenda
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            //Application.Run(new frmCadastroProduto());
+            //Application.Run(new frmCadastroVenda());
 
             while (true)
             {
