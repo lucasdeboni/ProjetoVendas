@@ -122,7 +122,11 @@ namespace ProjetoVenda.view
         {
             Product produto = cbxProdutos.SelectedItem as Product;
             int quantidade = (int)this.numQuantidade.Value;
-
+            if(quantidade < 1)
+            {
+                MessageBox.Show("Produto com o estoque Zerado!");
+                return;
+            }
 
             Item? itemExistente = this.carrinho.FirstOrDefault(item => item.cod_produto == produto.cod_produto);
 
