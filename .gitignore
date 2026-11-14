@@ -20,6 +20,9 @@
 # Mono auto generated files
 mono_crash.*
 
+ProjetoVenda/bin/**
+ProjetoVenda/obj/**
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
