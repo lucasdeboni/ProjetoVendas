@@ -13,6 +13,7 @@ namespace ProjetoVenda.formularios
     public partial class frmPrincipal : Form
     {
         private FuncionarioControle controller;
+        //private bool formularioAtivo;
 
         public frmPrincipal()
         {
@@ -56,14 +57,32 @@ namespace ProjetoVenda.formularios
         {
             frmCadastroFuncionario frm = new frmCadastroFuncionario();
             exibirFormulario(frm);
+
             //frm.ShowDialog();
+
+            desativarBotao();
+            //formularioAtivo = true;
+            ativarBotao(btnCadFuncionario);
         }
 
         private void btnCadProduto_Click(object sender, EventArgs e)
         {
             frmCadastroProduto frm = new frmCadastroProduto();
             exibirFormulario(frm);
+
+            desativarBotao();
+            //formularioAtivo = true;
+            ativarBotao(btnCadProduto);
             //frm.ShowDialog();
+        }
+        private void btnPerfil_Click(object sender, EventArgs e)
+        {
+            frmPerfilUsuario frm = new frmPerfilUsuario();
+            exibirFormulario(frm);
+
+            desativarBotao();
+            //formularioAtivo = true;
+            ativarBotao(btnPerfil);
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -74,16 +93,37 @@ namespace ProjetoVenda.formularios
             this.Dispose();
         }
 
-        private void btnPerfil_Click(object sender, EventArgs e)
-        {
-            frmPerfilUsuario frm = new frmPerfilUsuario();
-            exibirFormulario(frm);
-        }
 
         private void btnCadVenda_Click(object sender, EventArgs e)
         {
             frmCadastroVenda frm = new frmCadastroVenda();
             exibirFormulario(frm);
+
+            desativarBotao();
+            //formularioAtivo = true;
+            ativarBotao(btnCadVenda);
+        }
+
+        private void desativarBotao()
+        {
+            //formularioAtivo = false;
+            btnCadProduto.BackColor = SystemColors.Menu;
+            btnCadProduto.ForeColor = SystemColors.ControlText;
+
+            btnCadVenda.BackColor = SystemColors.Menu;
+            btnCadVenda.ForeColor = SystemColors.ControlText;
+
+            btnCadFuncionario.BackColor = SystemColors.Menu;
+            btnCadFuncionario.ForeColor = SystemColors.ControlText;
+
+            btnPerfil.BackColor = SystemColors.Menu;
+            btnPerfil.ForeColor = SystemColors.ControlText;
+        }
+
+        private void ativarBotao(Button button)
+        {
+            button.BackColor = Color.RoyalBlue;
+            button.ForeColor = Color.White;
         }
     }
 }

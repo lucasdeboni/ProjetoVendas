@@ -24,11 +24,12 @@ namespace ProjetoVenda.formularios
             string usuario = this.txtUsuario.Text;
             string senha = this.txtSenha.Text;
 
-            if( controller.autenticar(usuario, senha))
+            if (controller.autenticar(usuario, senha))
             {
                 this.DialogResult = DialogResult.OK;
                 this.Close();
-            } else
+            }
+            else
             {
                 MessageBox.Show(
                     "Usuário ou senha incorretos",
@@ -58,6 +59,11 @@ namespace ProjetoVenda.formularios
                 this.txtSenha.Text = "";
             }
             */
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadastroProduto));
             txtNome = new TextBox();
             txtMarca = new TextBox();
             txtPreco = new TextBox();
@@ -50,15 +51,15 @@
             // 
             // txtNome
             // 
-            txtNome.Location = new Point(31, 41);
+            txtNome.Location = new Point(25, 33);
             txtNome.Name = "txtNome";
             txtNome.PlaceholderText = "Nome do produto";
-            txtNome.Size = new Size(257, 23);
+            txtNome.Size = new Size(368, 23);
             txtNome.TabIndex = 0;
             // 
             // txtMarca
             // 
-            txtMarca.Location = new Point(306, 41);
+            txtMarca.Location = new Point(399, 33);
             txtMarca.Name = "txtMarca";
             txtMarca.PlaceholderText = "Marca do produto";
             txtMarca.Size = new Size(257, 23);
@@ -66,7 +67,7 @@
             // 
             // txtPreco
             // 
-            txtPreco.Location = new Point(34, 89);
+            txtPreco.Location = new Point(28, 81);
             txtPreco.Name = "txtPreco";
             txtPreco.PlaceholderText = "R$ 0000";
             txtPreco.Size = new Size(100, 23);
@@ -74,7 +75,7 @@
             // 
             // txtQuantidade
             // 
-            txtQuantidade.Location = new Point(171, 90);
+            txtQuantidade.Location = new Point(134, 81);
             txtQuantidade.Maximum = new decimal(new int[] { 100000, 0, 0, 0 });
             txtQuantidade.Minimum = new decimal(new int[] { 1, 0, 0, int.MinValue });
             txtQuantidade.Name = "txtQuantidade";
@@ -84,7 +85,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(31, 23);
+            label1.Location = new Point(25, 15);
             label1.Name = "label1";
             label1.Size = new Size(103, 15);
             label1.TabIndex = 4;
@@ -93,25 +94,25 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(306, 23);
+            label2.Location = new Point(399, 15);
             label2.Name = "label2";
-            label2.Size = new Size(40, 15);
+            label2.Size = new Size(103, 15);
             label2.TabIndex = 5;
-            label2.Text = "Marca";
+            label2.Text = "Marca do Produto";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(34, 71);
+            label3.Location = new Point(28, 63);
             label3.Name = "label3";
-            label3.Size = new Size(37, 15);
+            label3.Size = new Size(100, 15);
             label3.TabIndex = 6;
-            label3.Text = "Preco";
+            label3.Text = "Preco do Produto";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(171, 71);
+            label4.Location = new Point(134, 62);
             label4.Name = "label4";
             label4.Size = new Size(69, 15);
             label4.TabIndex = 7;
@@ -119,12 +120,16 @@
             // 
             // btnCadProduto
             // 
-            btnCadProduto.Location = new Point(306, 77);
+            btnCadProduto.BackColor = Color.RoyalBlue;
+            btnCadProduto.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
+            btnCadProduto.FlatStyle = FlatStyle.Flat;
+            btnCadProduto.ForeColor = SystemColors.ButtonHighlight;
+            btnCadProduto.Location = new Point(568, 63);
             btnCadProduto.Name = "btnCadProduto";
-            btnCadProduto.Size = new Size(80, 40);
+            btnCadProduto.Size = new Size(88, 59);
             btnCadProduto.TabIndex = 4;
-            btnCadProduto.Text = "Cadastrar";
-            btnCadProduto.UseVisualStyleBackColor = true;
+            btnCadProduto.Text = "Cadastrar Produto";
+            btnCadProduto.UseVisualStyleBackColor = false;
             btnCadProduto.Click += btnCadProduto_Click;
             // 
             // dgvProdutos
@@ -133,7 +138,7 @@
             dgvProdutos.AllowUserToDeleteRows = false;
             dgvProdutos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvProdutos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProdutos.Location = new Point(31, 155);
+            dgvProdutos.Location = new Point(25, 162);
             dgvProdutos.MultiSelect = false;
             dgvProdutos.Name = "dgvProdutos";
             dgvProdutos.ReadOnly = true;
@@ -145,9 +150,9 @@
             // btnAtualizar
             // 
             btnAtualizar.Enabled = false;
-            btnAtualizar.Location = new Point(582, 31);
+            btnAtualizar.Location = new Point(482, 95);
             btnAtualizar.Name = "btnAtualizar";
-            btnAtualizar.Size = new Size(80, 40);
+            btnAtualizar.Size = new Size(80, 27);
             btnAtualizar.TabIndex = 9;
             btnAtualizar.Text = "Atualizar";
             btnAtualizar.UseVisualStyleBackColor = true;
@@ -155,20 +160,24 @@
             // 
             // btnExcluir
             // 
+            btnExcluir.BackColor = Color.Tomato;
             btnExcluir.Enabled = false;
-            btnExcluir.Location = new Point(582, 73);
+            btnExcluir.FlatAppearance.MouseOverBackColor = Color.LightCoral;
+            btnExcluir.FlatStyle = FlatStyle.Flat;
+            btnExcluir.ForeColor = SystemColors.ButtonHighlight;
+            btnExcluir.Location = new Point(396, 95);
             btnExcluir.Name = "btnExcluir";
-            btnExcluir.Size = new Size(80, 40);
+            btnExcluir.Size = new Size(80, 27);
             btnExcluir.TabIndex = 10;
             btnExcluir.Text = "Excluir";
-            btnExcluir.UseVisualStyleBackColor = true;
+            btnExcluir.UseVisualStyleBackColor = false;
             btnExcluir.Click += btnExcluir_Click;
             // 
             // btnAnterior
             // 
-            btnAnterior.Location = new Point(31, 529);
+            btnAnterior.Location = new Point(25, 536);
             btnAnterior.Name = "btnAnterior";
-            btnAnterior.Size = new Size(75, 39);
+            btnAnterior.Size = new Size(95, 55);
             btnAnterior.TabIndex = 11;
             btnAnterior.Text = "< Anterior";
             btnAnterior.UseVisualStyleBackColor = true;
@@ -176,9 +185,9 @@
             // 
             // btnProximo
             // 
-            btnProximo.Location = new Point(587, 529);
+            btnProximo.Location = new Point(561, 536);
             btnProximo.Name = "btnProximo";
-            btnProximo.Size = new Size(75, 39);
+            btnProximo.Size = new Size(95, 55);
             btnProximo.TabIndex = 12;
             btnProximo.Text = "Proximo >";
             btnProximo.UseVisualStyleBackColor = true;
@@ -186,9 +195,9 @@
             // 
             // lblPaginas
             // 
-            lblPaginas.Location = new Point(112, 529);
+            lblPaginas.Location = new Point(126, 536);
             lblPaginas.Name = "lblPaginas";
-            lblPaginas.Size = new Size(469, 39);
+            lblPaginas.Size = new Size(429, 55);
             lblPaginas.TabIndex = 13;
             lblPaginas.Text = "Pagina 1 de 5";
             lblPaginas.TextAlign = ContentAlignment.MiddleCenter;
@@ -198,7 +207,7 @@
             cbxQuantidadeItens.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxQuantidadeItens.FormattingEnabled = true;
             cbxQuantidadeItens.Items.AddRange(new object[] { "5", "10", "25", "50", "100" });
-            cbxQuantidadeItens.Location = new Point(574, 126);
+            cbxQuantidadeItens.Location = new Point(568, 133);
             cbxQuantidadeItens.Name = "cbxQuantidadeItens";
             cbxQuantidadeItens.Size = new Size(88, 23);
             cbxQuantidadeItens.TabIndex = 14;
@@ -208,7 +217,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(680, 588);
+            BackColor = Color.WhiteSmoke;
+            ClientSize = new Size(680, 612);
             Controls.Add(cbxQuantidadeItens);
             Controls.Add(lblPaginas);
             Controls.Add(btnProximo);
@@ -225,6 +235,7 @@
             Controls.Add(txtPreco);
             Controls.Add(txtMarca);
             Controls.Add(txtNome);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmCadastroProduto";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro Produto";

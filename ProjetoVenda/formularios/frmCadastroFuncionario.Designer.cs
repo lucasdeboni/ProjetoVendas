@@ -120,12 +120,16 @@
             // 
             // btnCadastrar
             // 
-            btnCadastrar.Location = new Point(11, 153);
+            btnCadastrar.BackColor = Color.RoyalBlue;
+            btnCadastrar.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
+            btnCadastrar.FlatStyle = FlatStyle.Flat;
+            btnCadastrar.ForeColor = SystemColors.ButtonHighlight;
+            btnCadastrar.Location = new Point(11, 143);
             btnCadastrar.Name = "btnCadastrar";
-            btnCadastrar.Size = new Size(75, 36);
+            btnCadastrar.Size = new Size(75, 46);
             btnCadastrar.TabIndex = 9;
             btnCadastrar.Text = "Cadastrar";
-            btnCadastrar.UseVisualStyleBackColor = true;
+            btnCadastrar.UseVisualStyleBackColor = false;
             btnCadastrar.Click += btnCadastrar_Click;
             // 
             // txtConfirmacaoSenha
@@ -228,9 +232,9 @@
             // 
             // btnAtualizar
             // 
-            btnAtualizar.Location = new Point(565, 16);
+            btnAtualizar.Location = new Point(92, 166);
             btnAtualizar.Name = "btnAtualizar";
-            btnAtualizar.Size = new Size(75, 36);
+            btnAtualizar.Size = new Size(75, 23);
             btnAtualizar.TabIndex = 19;
             btnAtualizar.Text = "Atualizar";
             btnAtualizar.UseVisualStyleBackColor = true;

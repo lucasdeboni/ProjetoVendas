@@ -46,7 +46,7 @@
             // lblUsername
             // 
             lblUsername.AutoSize = true;
-            lblUsername.Location = new Point(12, 17);
+            lblUsername.Location = new Point(16, 13);
             lblUsername.Name = "lblUsername";
             lblUsername.Size = new Size(97, 15);
             lblUsername.TabIndex = 0;
@@ -54,22 +54,28 @@
             // 
             // btnCadFuncionario
             // 
-            btnCadFuncionario.Location = new Point(12, 555);
+            btnCadFuncionario.BackColor = SystemColors.Menu;
+            btnCadFuncionario.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
+            btnCadFuncionario.FlatStyle = FlatStyle.Flat;
+            btnCadFuncionario.Location = new Point(16, 551);
             btnCadFuncionario.Name = "btnCadFuncionario";
             btnCadFuncionario.Size = new Size(92, 40);
             btnCadFuncionario.TabIndex = 1;
             btnCadFuncionario.Text = "Cadastrar Funcionário";
-            btnCadFuncionario.UseVisualStyleBackColor = true;
+            btnCadFuncionario.UseVisualStyleBackColor = false;
             btnCadFuncionario.Click += btnCadFuncionario_Click;
             // 
             // btnCadProduto
             // 
-            btnCadProduto.Location = new Point(12, 60);
+            btnCadProduto.BackColor = SystemColors.Menu;
+            btnCadProduto.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
+            btnCadProduto.FlatStyle = FlatStyle.Flat;
+            btnCadProduto.Location = new Point(16, 56);
             btnCadProduto.Name = "btnCadProduto";
             btnCadProduto.Size = new Size(92, 40);
             btnCadProduto.TabIndex = 2;
             btnCadProduto.Text = "Cadastrar Produto";
-            btnCadProduto.UseVisualStyleBackColor = true;
+            btnCadProduto.UseVisualStyleBackColor = false;
             btnCadProduto.Click += btnCadProduto_Click;
             // 
             // panel2
@@ -90,32 +96,42 @@
             // 
             // btnCadVenda
             // 
-            btnCadVenda.Location = new Point(12, 106);
+            btnCadVenda.BackColor = SystemColors.Menu;
+            btnCadVenda.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
+            btnCadVenda.FlatStyle = FlatStyle.Flat;
+            btnCadVenda.Location = new Point(16, 102);
             btnCadVenda.Name = "btnCadVenda";
             btnCadVenda.Size = new Size(92, 40);
             btnCadVenda.TabIndex = 5;
             btnCadVenda.Text = "Cadastrar Venda";
-            btnCadVenda.UseVisualStyleBackColor = true;
+            btnCadVenda.UseVisualStyleBackColor = false;
             btnCadVenda.Click += btnCadVenda_Click;
             // 
             // btnPerfil
             // 
-            btnPerfil.Location = new Point(12, 601);
+            btnPerfil.BackColor = SystemColors.Menu;
+            btnPerfil.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
+            btnPerfil.FlatStyle = FlatStyle.Flat;
+            btnPerfil.Location = new Point(16, 597);
             btnPerfil.Name = "btnPerfil";
             btnPerfil.Size = new Size(92, 40);
             btnPerfil.TabIndex = 4;
             btnPerfil.Text = "Perfil";
-            btnPerfil.UseVisualStyleBackColor = true;
+            btnPerfil.UseVisualStyleBackColor = false;
             btnPerfil.Click += btnPerfil_Click;
             // 
             // btnSair
             // 
-            btnSair.Location = new Point(12, 647);
+            btnSair.BackColor = Color.Tomato;
+            btnSair.FlatAppearance.MouseOverBackColor = Color.LightCoral;
+            btnSair.FlatStyle = FlatStyle.Flat;
+            btnSair.ForeColor = SystemColors.ButtonHighlight;
+            btnSair.Location = new Point(16, 643);
             btnSair.Name = "btnSair";
             btnSair.Size = new Size(92, 37);
             btnSair.TabIndex = 3;
             btnSair.Text = "Sair";
-            btnSair.UseVisualStyleBackColor = true;
+            btnSair.UseVisualStyleBackColor = false;
             btnSair.Click += btnSair_Click;
             // 
             // panel1
