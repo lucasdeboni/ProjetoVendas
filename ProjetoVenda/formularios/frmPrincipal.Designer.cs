@@ -57,7 +57,7 @@
             btnCadFuncionario.BackColor = SystemColors.Menu;
             btnCadFuncionario.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
             btnCadFuncionario.FlatStyle = FlatStyle.Flat;
-            btnCadFuncionario.Location = new Point(16, 551);
+            btnCadFuncionario.Location = new Point(16, 687);
             btnCadFuncionario.Name = "btnCadFuncionario";
             btnCadFuncionario.Size = new Size(92, 40);
             btnCadFuncionario.TabIndex = 1;
@@ -91,7 +91,7 @@
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(131, 694);
+            panel2.Size = new Size(131, 829);
             panel2.TabIndex = 4;
             // 
             // btnCadVenda
@@ -112,7 +112,7 @@
             btnPerfil.BackColor = SystemColors.Menu;
             btnPerfil.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue;
             btnPerfil.FlatStyle = FlatStyle.Flat;
-            btnPerfil.Location = new Point(16, 597);
+            btnPerfil.Location = new Point(16, 733);
             btnPerfil.Name = "btnPerfil";
             btnPerfil.Size = new Size(92, 40);
             btnPerfil.TabIndex = 4;
@@ -122,11 +122,11 @@
             // 
             // btnSair
             // 
-            btnSair.BackColor = Color.Tomato;
-            btnSair.FlatAppearance.MouseOverBackColor = Color.LightCoral;
+            btnSair.BackColor = SystemColors.ControlLight;
+            btnSair.FlatAppearance.MouseOverBackColor = Color.LightGray;
             btnSair.FlatStyle = FlatStyle.Flat;
-            btnSair.ForeColor = SystemColors.ButtonHighlight;
-            btnSair.Location = new Point(16, 643);
+            btnSair.ForeColor = SystemColors.ControlText;
+            btnSair.Location = new Point(16, 779);
             btnSair.Name = "btnSair";
             btnSair.Size = new Size(92, 37);
             btnSair.TabIndex = 3;
@@ -140,16 +140,16 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(131, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(783, 60);
+            panel1.Size = new Size(877, 60);
             panel1.TabIndex = 5;
             // 
             // lblTitulo
             // 
-            lblTitulo.Dock = DockStyle.Fill;
+            lblTitulo.Dock = DockStyle.Top;
             lblTitulo.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitulo.Location = new Point(0, 0);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(783, 60);
+            lblTitulo.Size = new Size(877, 60);
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "Título da Tela";
             lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
@@ -159,18 +159,19 @@
             painelPrincipal.Dock = DockStyle.Fill;
             painelPrincipal.Location = new Point(131, 60);
             painelPrincipal.Name = "painelPrincipal";
-            painelPrincipal.Size = new Size(783, 634);
+            painelPrincipal.Size = new Size(877, 769);
             painelPrincipal.TabIndex = 6;
             // 
             // frmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 694);
+            ClientSize = new Size(1008, 829);
             Controls.Add(painelPrincipal);
             Controls.Add(panel1);
             Controls.Add(panel2);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MinimumSize = new Size(1024, 868);
             Name = "frmPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Tela Inicial";

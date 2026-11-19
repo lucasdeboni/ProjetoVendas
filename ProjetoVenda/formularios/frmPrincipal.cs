@@ -13,6 +13,7 @@ namespace ProjetoVenda.formularios
     public partial class frmPrincipal : Form
     {
         private FuncionarioControle controller;
+        private List<Button> listaBotoesMenu;
         //private bool formularioAtivo;
 
         public frmPrincipal()
@@ -22,6 +23,7 @@ namespace ProjetoVenda.formularios
             Funcionario? funcionario = controller.usuarioAutenticado();
             string nome = (funcionario != null) ? funcionario.nome : "";
             this.Text += $" - {nome}";
+            listaBotoesMenu = new List<Button> { btnCadProduto, btnCadVenda, btnCadFuncionario, btnPerfil };
         }
 
         private void frmPrincipal_Load(object sender, EventArgs e)
@@ -60,7 +62,7 @@ namespace ProjetoVenda.formularios
 
             //frm.ShowDialog();
 
-            desativarBotao();
+            desativarBotao(listaBotoesMenu);
             //formularioAtivo = true;
             ativarBotao(btnCadFuncionario);
         }
@@ -70,7 +72,7 @@ namespace ProjetoVenda.formularios
             frmCadastroProduto frm = new frmCadastroProduto();
             exibirFormulario(frm);
 
-            desativarBotao();
+            desativarBotao(listaBotoesMenu);
             //formularioAtivo = true;
             ativarBotao(btnCadProduto);
             //frm.ShowDialog();
@@ -80,11 +82,22 @@ namespace ProjetoVenda.formularios
             frmPerfilUsuario frm = new frmPerfilUsuario();
             exibirFormulario(frm);
 
-            desativarBotao();
+            desativarBotao(listaBotoesMenu);
             //formularioAtivo = true;
             ativarBotao(btnPerfil);
         }
 
+
+
+        private void btnCadVenda_Click(object sender, EventArgs e)
+        {
+            frmCadastroVenda frm = new frmCadastroVenda();
+            exibirFormulario(frm);
+
+            desativarBotao(listaBotoesMenu);
+            //formularioAtivo = true;
+            ativarBotao(btnCadVenda);
+        }
         private void btnSair_Click(object sender, EventArgs e)
         {
             // evento para sair
@@ -93,31 +106,14 @@ namespace ProjetoVenda.formularios
             this.Dispose();
         }
 
-
-        private void btnCadVenda_Click(object sender, EventArgs e)
-        {
-            frmCadastroVenda frm = new frmCadastroVenda();
-            exibirFormulario(frm);
-
-            desativarBotao();
-            //formularioAtivo = true;
-            ativarBotao(btnCadVenda);
-        }
-
-        private void desativarBotao()
+        private void desativarBotao(List<Button> botoes)
         {
             //formularioAtivo = false;
-            btnCadProduto.BackColor = SystemColors.Menu;
-            btnCadProduto.ForeColor = SystemColors.ControlText;
-
-            btnCadVenda.BackColor = SystemColors.Menu;
-            btnCadVenda.ForeColor = SystemColors.ControlText;
-
-            btnCadFuncionario.BackColor = SystemColors.Menu;
-            btnCadFuncionario.ForeColor = SystemColors.ControlText;
-
-            btnPerfil.BackColor = SystemColors.Menu;
-            btnPerfil.ForeColor = SystemColors.ControlText;
+            foreach(Button botao in botoes)
+            {
+                botao.BackColor = SystemColors.Menu;
+                botao.ForeColor = SystemColors.ControlText;
+            }
         }
 
         private void ativarBotao(Button button)
