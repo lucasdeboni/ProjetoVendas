@@ -77,6 +77,10 @@ namespace ProjetoVenda.formularios
                 MessageBox.Show(ex.Message ,"Erro no Cadastro Produto",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            this.btnAtualizar.Enabled = false;
+            this.btnExcluir.Enabled = false;
+
         }
 
         private void frmCadastroProduto_Load(object sender, EventArgs e)
