@@ -165,7 +165,9 @@
             dgvFuncionarios.Dock = DockStyle.Fill;
             dgvFuncionarios.Location = new Point(15, 293);
             dgvFuncionarios.Margin = new Padding(15, 18, 15, 18);
+            dgvFuncionarios.MultiSelect = false;
             dgvFuncionarios.Name = "dgvFuncionarios";
+            dgvFuncionarios.ReadOnly = true;
             dgvFuncionarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvFuncionarios.Size = new Size(654, 238);
             dgvFuncionarios.TabIndex = 24;

@@ -1,4 +1,6 @@
+using ProjetoVenda.controle;
 using ProjetoVenda.formularios;
+using QuestPDF.Infrastructure;
 
 namespace ProjetoVenda
 {
@@ -10,11 +12,15 @@ namespace ProjetoVenda
         [STAThread]
         static void Main()
         {
+            QuestPDF.Settings.License = LicenseType.Community;
+            
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
             //Application.Run(new frmCadastroVenda());
+            //Relatorio relatorio = new Relatorio();
+            //relatorio.salvarPdf();
 
             while (true)
             {
