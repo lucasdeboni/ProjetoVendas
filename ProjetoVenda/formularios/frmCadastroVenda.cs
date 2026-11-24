@@ -183,6 +183,8 @@ namespace ProjetoVenda.formularios
                     carrinho.Clear();
                     frmCadastroVenda_Load(this, EventArgs.Empty);
                     MessageBox.Show("Venda Cadastrada com sucesso!!!", "Cadastro Venda");
+                    // mostrar o cupom de venda
+                    relatorio.salvarPdf();
 
                 }
                 else
@@ -196,12 +198,6 @@ namespace ProjetoVenda.formularios
                 MessageBox.Show($"Erro: {ex.Message}", "Erro no Cadastro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            //carrinho.Clear();
-            //frmCadastroVenda_Load(this, EventArgs.Empty);
-            // mostrar o cupom de venda
-            relatorio.salvarPdf();
-
 
         }
 
