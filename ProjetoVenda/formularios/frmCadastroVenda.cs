@@ -180,12 +180,12 @@ namespace ProjetoVenda.formularios
                 bool resposta = vendaControle.cadastrarVenda(this.carrinho);
                 if (resposta)
                 {
-                    carrinho.Clear();
                     frmCadastroVenda_Load(this, EventArgs.Empty);
                     MessageBox.Show("Venda Cadastrada com sucesso!!!", "Cadastro Venda");
                     // mostrar o cupom de venda
-                    relatorio.salvarPdf();
-
+                    var documento = relatorio.gerarNota(carrinho);
+                    relatorio.salvarPdf(documento);
+                    carrinho.Clear();
                 }
                 else
                 {
