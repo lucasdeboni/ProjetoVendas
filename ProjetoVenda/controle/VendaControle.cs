@@ -40,5 +40,15 @@ namespace ProjetoVenda.controle
             return true;
         }
 
+        public List<Venda> listarVendaMes(int mes, int ano)
+        {
+            if(mes < 1 || mes > 12)
+            {
+                throw new Exception("Mês inválido");
+            }
+            return vendaRepositorio.listarVendasMes(mes, ano);
+
+        }
+
     }
 }

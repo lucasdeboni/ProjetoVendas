@@ -31,8 +31,15 @@ namespace ProjetoVenda
             //    });
             //var documento = relatorio.gerarNota(itens);
             //relatorio.salvarPdf(documento);
+            Relatorio relatorio = new Relatorio();
+            VendaControle vendaControle = new VendaControle();
+            List<Venda> lista = vendaControle.listarVendaMes(10, 2026);
+            var documento = relatorio.gerarRelatorioMensal(lista);
+            relatorio.salvarPdf(documento);
 
-            while (true)
+
+
+            while (false)
             {
                 using (frmLogin login = new frmLogin())
                 {
